@@ -1,0 +1,53 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+header{
+    width: 100%;
+    height: 100%;
+    background-color: #2B5738;
+    display: block;
+}
+header .um{
+    display: flex;
+    align-items: center;
+    gap: 250px;
+}
+header .um h1{
+    font-size: 50px;
+    color: #f5eaea;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+header .um h3{
+    font-size: 20px;
+    color: rgb(245, 234, 234);
+    margin-left: 20px;
+    margin-top: 20px;
+}
+header .cv{
+    display: flex;
+    align-items: center;
+}
+header .branco{
+    width: 100%;
+    height: 200%;
+    background-color: #f5eaea;
+    display: block;
+}
+header .branco h4{
+    font-size: 40px;
+    color: #f5eaea;
+}
+header .sobre{
+    margin: 20px;
+}
+header .sobre p{
+    padding-left: 500px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #f5eaea;
+    letter-spacing: 1.5px;
+    text-align: justify;
+    max-width: 600px;
+}
