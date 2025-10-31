@@ -12,10 +12,13 @@ header .um{
     display: flex;
     align-items: center;
     gap: 250px;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 header .um h1{
     font-size: 50px;
-    color: #f5eaea;
+    color: #f1eaea;
     margin-left: 20px;
     margin-top: 10px;
 }
@@ -32,22 +35,123 @@ header .cv{
 header .branco{
     width: 100%;
     height: 200%;
-    background-color: #f5eaea;
+    background-color: #f1eaea;
     display: block;
 }
 header .branco h4{
     font-size: 40px;
-    color: #f5eaea;
+    color: #f1eaea;
 }
 header .sobre{
     margin: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    padding-top: 15px;
 }
 header .sobre p{
     padding-left: 500px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     color: #f5eaea;
     letter-spacing: 1.5px;
     text-align: justify;
     max-width: 600px;
+    text-indent: 40px;
+}
+header .vivi{
+    width: 70px;
+    height: 100px;
+    background-color: #2B5738;
+    display: block;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    padding-top: 15px;
+}
+header .vivi p{
+    padding-left: 3px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: #f5eaea;
+    letter-spacing: 1.5px;
+    text-align: justify;
+    max-width: 600px;
+    text-indent: 40px;
+}
+.cc {
+    position: relative; /* Para posicionar os botões */
+    max-width: 1200px; /* Largura máxima do carrossel */
+    margin: 40px auto; /* Centraliza na página */
+    overflow: hidden; /* **O SEGREDO:** Esconde o conteúdo que ultrapassa a largura */
+    padding: 0 50px; /* Espaço para as setas laterais */
+}
+
+/* Faixa dos Itens: Garante que os 10 itens fiquem lado a lado */
+.cf {
+    display: flex;
+    transition: transform 0.3s ease-in-out; /* Transição suave para o movimento do JavaScript */
+    gap: 20px; /* Espaçamento entre os itens */
+}
+
+/* Item Individual: Define o tamanho de cada bloco */
+.ci {
+    flex: 0 0 auto; /* Não permite que os itens cresçam ou encolham */
+    width: 250px; /* Largura fixa para cada item (ajuste conforme o design) */
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo da Imagem */
+.item-imagem {
+    width: 100%;
+    max-height: 150px; /* Altura máxima para uniformizar as imagens */
+    object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+/* Estilo do Link (Nome da Empresa) */
+.item-link {
+    display: block; /* Ocupa a largura total para ser uma área clicável maior */
+    margin-top: 10px;
+    font-weight: bold;
+    color: #007bff; /* Cor padrão para links */
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+.item-link:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+/* Estilo dos Botões de Navegação (Setas) */
+.carrossel-botao {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 18px;
+    border-radius: 50%; /* Botões redondos */
+    outline: none;
+    transition: background-color 0.2s;
+}
+
+.carrossel-botao:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.anterior {
+    left: 10px;
+}
+
+.proximo {
+    right: 10px;
 }
