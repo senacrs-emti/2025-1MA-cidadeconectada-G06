@@ -77,57 +77,51 @@ header .vivi p{
     max-width: 600px;
     text-indent: 40px;
 }
-.cc {
-    position: relative; /* Para posicionar os botões */
-    max-width: 1200px; /* Largura máxima do carrossel */
-    margin: 40px auto; /* Centraliza na página */
-    overflow: hidden; /* **O SEGREDO:** Esconde o conteúdo que ultrapassa a largura */
-    padding: 0 50px; /* Espaço para as setas laterais */
+main .cc{
+    position: relative;
+    max-width: 1200px;
+    margin: 40px auto; /* meio da pagina */
+    overflow: hidden; /* item pra fora */
+    padding: 0 50px;
 }
-
-/* Faixa dos Itens: Garante que os 10 itens fiquem lado a lado */
-.cf {
+/* faixa dos itens para ficar os 10 itens lado a lado */
+main .cc .cf{
     display: flex;
-    transition: transform 0.3s ease-in-out; /* Transição suave para o movimento do JavaScript */
-    gap: 20px; /* Espaçamento entre os itens */
+    transition: transform 0.3s ease-in-out; /* transição js */
+    gap: 20px;
 }
-
-/* Item Individual: Define o tamanho de cada bloco */
-.ci {
-    flex: 0 0 auto; /* Não permite que os itens cresçam ou encolham */
-    width: 250px; /* Largura fixa para cada item (ajuste conforme o design) */
+/* tem individual tamanho de cada bloco */
+main .cc .cf .ci{
+    flex: 0 0 auto;
+    width: 250px;
     text-align: center;
     border: 1px solid #ccc;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
-
-/* Estilo da Imagem */
-.item-imagem {
+/* ajustes da imagem*/
+main .cc .cf .ci .item-imagem{
     width: 100%;
-    max-height: 150px; /* Altura máxima para uniformizar as imagens */
-    object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+    max-height: 150px;
+    object-fit: cover;
     border-radius: 4px;
     margin-bottom: 10px;
 }
-
-/* Estilo do Link (Nome da Empresa) */
-.item-link {
-    display: block; /* Ocupa a largura total para ser uma área clicável maior */
+main .cc .cf .ci .item-link{
+    display: block;
     margin-top: 10px;
     font-weight: bold;
-    color: #007bff; /* Cor padrão para links */
+    color: #181f1a;
     text-decoration: none;
     font-size: 1.1em;
 }
-
 .item-link:hover {
     text-decoration: underline;
     color: #0056b3;
 }
 
-/* Estilo dos Botões de Navegação (Setas) */
+/* setas pro lado */
 .carrossel-botao {
     position: absolute;
     top: 50%;
@@ -139,7 +133,7 @@ header .vivi p{
     cursor: pointer;
     z-index: 10;
     font-size: 18px;
-    border-radius: 50%; /* Botões redondos */
+    border-radius: 50%;
     outline: none;
     transition: background-color 0.2s;
 }
@@ -147,7 +141,6 @@ header .vivi p{
 .carrossel-botao:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
-
 .anterior {
     left: 10px;
 }
