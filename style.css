@@ -58,7 +58,7 @@ main .sobre{
    
     background-image: url(https://ssl.gstatic.com/atari/images/simple-header-blended-small.png);
 
-    background-color: green;
+    background-color: #058d05;
     background-size: cover;
     display: block;
     padding-top: 50px;
@@ -154,7 +154,7 @@ main .cc .cf .ci a{
 /* ajustes da imagem*/
 main .cc .cf .ci .item-imagem{
     width: 100%;
-    max-height: 150px;
+    height: 150px;
     object-fit: cover;
     border-radius: 4px;
     margin-bottom: 10px;
