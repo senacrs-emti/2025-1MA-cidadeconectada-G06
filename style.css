@@ -10,13 +10,16 @@ header{
     display: block;
     margin-bottom: 50px;
 }
+
 header .um{
     display: flex;
     align-items: center;
-    gap: 250px;
+    justify-content: space-between; 
+    padding: 0 50px;
     padding-left: 20px;
     padding-bottom: 10px;
     padding-top: 10px;
+
 }
 header .um img{
     width: 90px;
@@ -35,7 +38,7 @@ header .um h1{
 header .um h3{
     font-size: 20px;
     margin-left: 20px;
-    margin-top: 2px;
+    margin-top: 7px;
     color: #f1eaea;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
@@ -225,4 +228,135 @@ footer .fim #nd{
     margin-top: 40px;
     color: #f1eaea;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.blurry-background {
+    /* desfoque */
+    pointer-events: none; 
+}
+
+/* container principal */
+.modal {
+    /* Fica fixo sobre tudo */
+    position: fixed; 
+    z-index: 100; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); 
+    display: none;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(3px);
+}
+
+/* conteudo da caixa */
+.modal-content {
+    background-color: #fefefe;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    animation: fadeIn 0.3s;
+}
+
+/* animação?? */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* botao x) */
+.fechar-modal {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
+
+.fechar-modal:hover, .fechar-modal:focus {
+    color: #333;
+    text-decoration: none;
+}
+
+
+.input-feedback {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+/* placeholder */
+.input-feedback::placeholder {
+    color: #888; 
+    opacity: 1; 
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.input-group #inputNome {
+    flex-grow: 1;
+    margin-bottom: 0; 
+}
+.anonimo-opcoes {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+/* botao envio */
+#enviarFeedback {
+    background-color: #2B5738;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    float: right; 
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#enviarFeedback:hover {
+    background-color: #3f7b4e;
+}
+
+/* visualização dos feedbacks */
+#listaFeedbacks {
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.feedback-item {
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+}
+
+.feedback-nome {
+    font-weight: bold;
+    color: #2B5738;
+}
+
+.feedback-data {
+    font-size: 0.8em;
+    color: #999;
+    margin-bottom: 5px;
 }

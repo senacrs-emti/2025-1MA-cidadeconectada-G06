@@ -11,8 +11,27 @@
              <div class="um">
                 <h1>PIPA</h1>
                 <h3><a href="#sobree">Sobre nós</a></h3>
-                <h3><a href="https://sites.google.com/d/1rKpOR58cUSjd6UVjq15pYEoAHtTuT4Zs/p/1Lj_D5IfEpIn0z-nCLildva7Tw-hsJSP-/edit"></a>ONGs</h3>
+                <h3><a href="https://sites.google.com/d/1rKpOR58cUSjd6UVjq15pYEoAHtTuT4Zs/p/1Lj_D5IfEpIn0z-nCLildva7Tw-hsJSP-/edit">ONGs</a></h3>
                 <h3><a href="#caroca">Instituições</a></h3>
+                <h3><a href="#" id="abrirFeedback">Feedbacks</a></h3>
+            </div>
+            <div id="modalFeedback" class="modal">
+                <div class="modal-content">
+                    <span class="fechar-modal" data-modal-id="modalFeedback">&times;</span>
+                    <h2>Deixe seu Feedback</h2>
+                    <form id="formFeedback">
+                <div class="input-group">
+                    <input type="text" id="inputNome" placeholder="Nome" class="input-feedback">
+                <div class="anonimo-opcoes">
+                    <input type="checkbox" id="anonimoCheck">
+                    <label for="anonimoCheck">Anônimo</label>
+                </div>
+                </div>
+            <textarea id="inputMensagem" placeholder="Feedback" class="input-feedback" required></textarea>
+            <button type="submit" id="enviarFeedback"> Enviar <span style="font-size: 1.2em;">&#10148;</span>
+            </button>
+                    </form>
+                </div>
             </div>
         </header>
         <main>
@@ -128,7 +147,16 @@
         <footer>
             <div class="fim">
                 <p>Para mais informações, entre em contato conosco através do email: letihypolito@gmail.com ou joananonemacher9@gmail.com</p>
-            <p id="nd">© 2025  PIPA</p>
+                <button id="abrirVisualizacao" class="botao-feedback">Visualizar Feedbacks</button>
+                <p id="nd">© 2025  PIPA</p>
+            </div>
+            <div id="modalVisualizacao" class="modal">
+                <div class="modal-content">
+                    <span class="fechar-modal" data-modal-id="modalVisualizacao">&times;</span>
+                    <h2>Feedbacks Recebidos</h2>
+                <div id="listaFeedbacks">
+                </div>
+                </div>
             </div>
             <script src="script.js"></script>
         </footer>
