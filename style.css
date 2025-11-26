@@ -189,13 +189,13 @@ main .cc .cf .ci .item-link{
     outline: none;
     transition: background-color 0.2s;
 }
-.carrossel-botao:hover {
+.carrossel-botao:hover{
     background-color: rgba(0, 0, 0, 0.8);
 }
-.anterior {
+.anterior{
     left: 10px;
 }
-.proximo {
+.proximo{
     right: 10px;
 }
 footer{
@@ -204,6 +204,30 @@ footer{
     float: left;
     background-color: #2B5738;
     display: block;
+}
+
+footer #abrirVisualizacao{
+    background-color: #2B5738;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    position: absolute; 
+    right: 50px;
+    top: 1210px;
+    transform: translateY(-50%); 
+}
+
+footer #abrirVisualizacao:hover{
+    background-color: #3f7b4e;
+}
+
+footer p{
+    margin: 5px 0;
+    max-width: 80%;
 }
 footer .fim{
     display: flex;
@@ -222,10 +246,11 @@ footer .fim p{
     color: #f1eaea;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+
 footer .fim #nd{
     text-align: right;
     font-size: 13px;
-    margin-top: 40px;
+    margin-top: 50px;
     color: #f1eaea;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }

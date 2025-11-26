@@ -119,9 +119,13 @@ document.addEventListener('DOMContentLoaded', function() {
     fecharModais.forEach(btn => {
         btn.addEventListener('click', (e) => {
             const modalId = btn.getAttribute('data-modal-id');
+            // Linha de verificação:
+            console.log('Tentando fechar o modal com ID:', modalId); 
+            
             fecharModal(document.getElementById(modalId));
         });
     });
+    
 
     // --- Fechamento ao clicar fora do Modal ---
     window.addEventListener('click', (e) => {
