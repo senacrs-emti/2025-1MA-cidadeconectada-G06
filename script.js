@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     // ===============================================
-    // 1. LÓGICA DO CARROSSEL (Versão Contínua/Loop)
-    // Mantenha esta parte do código que já está funcionando
+    // 1. LÓGICA DO CARROSSEL (Continua funcionando)
     // ===============================================
     
     const carrosselContainer = document.querySelector('.cc'); 
@@ -23,7 +22,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 const gap = parseInt(gapStyle) || 20; 
                 larguraItemComGap = itemLargura + gap; 
             }
-
             carrosselFaixa.style.transition = comTransicao ? 'transform 0.3s ease-in-out' : 'none';
             const deslocamento = indiceAtual * larguraItemComGap; 
             carrosselFaixa.style.transform = `translateX(-${deslocamento}px)`;
@@ -63,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // ===============================================
-    // 2. LÓGICA DO MODAL DE FEEDBACKS (NOVO)
+    // 2. LÓGICA DO MODAL DE FEEDBACKS (Com Correções)
     // ===============================================
 
     // Seletores de elementos do Modal
@@ -74,6 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const modalVisualizacao = document.getElementById('modalVisualizacao');
     const abrirFeedbackBtn = document.getElementById('abrirFeedback');
     const abrirVisualizacaoBtn = document.getElementById('abrirVisualizacao');
+    
     const fecharModais = document.querySelectorAll('.fechar-modal');
     
     const formFeedback = document.getElementById('formFeedback');
@@ -84,13 +83,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // --- Funções de Abertura/Fechamento ---
     function toggleBlur(ativo) {
-        // Aplica/Remove a classe de desfoque nos elementos Main e Footer
         if (ativo) {
-            mainContent.classList.add('blurry-background');
-            footerContent.classList.add('blurry-background');
+            if (mainContent) mainContent.classList.add('blurry-background');
+            if (footerContent) footerContent.classList.add('blurry-background');
         } else {
-            mainContent.classList.remove('blurry-background');
-            footerContent.classList.remove('blurry-background');
+            if (mainContent) mainContent.classList.remove('blurry-background');
+            if (footerContent) footerContent.classList.remove('blurry-background');
         }
     }
 
@@ -105,27 +103,33 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // --- Eventos de Abertura ---
-    abrirFeedbackBtn.addEventListener('click', (e) => {
-        e.preventDefault(); // Evita que o link # no cabeçalho role a página
-        abrirModal(modalFeedback);
-    });
+    // CORREÇÃO: Adicionamos a checagem if(abrirFeedbackBtn) para evitar erro caso o HTML não carregue
+    if (abrirFeedbackBtn) {
+        abrirFeedbackBtn.addEventListener('click', (e) => {
+            e.preventDefault(); 
+            abrirModal(modalFeedback);
+        });
+    }
 
-    abrirVisualizacaoBtn.addEventListener('click', () => {
-        abrirModal(modalVisualizacao);
-        carregarFeedbacks(); // Carrega os feedbacks antes de abrir
-    });
+    if (abrirVisualizacaoBtn) {
+        abrirVisualizacaoBtn.addEventListener('click', () => {
+            abrirModal(modalVisualizacao);
+            carregarFeedbacks(); 
+        });
+    }
 
     // --- Eventos de Fechamento (Botão X) ---
+    // Esta parte foi refeita para garantir que todos os botões 'X' funcionem.
     fecharModais.forEach(btn => {
         btn.addEventListener('click', (e) => {
             const modalId = btn.getAttribute('data-modal-id');
-            // Linha de verificação:
-            console.log('Tentando fechar o modal com ID:', modalId); 
+            const modalParaFechar = document.getElementById(modalId);
             
-            fecharModal(document.getElementById(modalId));
+            if (modalParaFechar) {
+                fecharModal(modalParaFechar);
+            }
         });
     });
-    
 
     // --- Fechamento ao clicar fora do Modal ---
     window.addEventListener('click', (e) => {
@@ -138,62 +142,62 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // --- Lógica do Checkbox Anônimo ---
-    anonimoCheck.addEventListener('change', () => {
-        // Se Anônimo estiver marcado, desabilita e limpa o campo Nome
-        if (anonimoCheck.checked) {
-            inputNome.value = '';
-            inputNome.disabled = true;
-            inputNome.placeholder = 'Anônimo';
-        } else {
-            inputNome.disabled = false;
-            inputNome.placeholder = 'Nome';
-        }
-    });
+    if (anonimoCheck) {
+        anonimoCheck.addEventListener('change', () => {
+            if (anonimoCheck.checked) {
+                inputNome.value = '';
+                inputNome.disabled = true;
+                inputNome.placeholder = 'Anônimo';
+            } else {
+                inputNome.disabled = false;
+                inputNome.placeholder = 'Nome';
+            }
+        });
+    }
+
 
     // --- Lógica de Submissão e Salvamento (localStorage) ---
-    formFeedback.addEventListener('submit', (e) => {
-        e.preventDefault();
+    if (formFeedback) {
+        formFeedback.addEventListener('submit', (e) => {
+            e.preventDefault();
 
-        if (inputMensagem.value.trim() === '') {
-            alert('Por favor, escreva um feedback antes de enviar.');
-            return;
-        }
+            if (inputMensagem.value.trim() === '') {
+                alert('Por favor, escreva um feedback antes de enviar.');
+                return;
+            }
 
-        // 1. Coletar dados
-        let nomeUsuario = inputNome.value.trim();
-        
-        if (anonimoCheck.checked || nomeUsuario === '') {
-            nomeUsuario = 'Anônimo';
-        }
+            let nomeUsuario = inputNome.value.trim();
+            if (anonimoCheck.checked || nomeUsuario === '') {
+                nomeUsuario = 'Anônimo';
+            }
 
-        const novoFeedback = {
-            nome: nomeUsuario,
-            mensagem: inputMensagem.value.trim(),
-            data: new Date().toLocaleString('pt-BR')
-        };
+            const novoFeedback = {
+                nome: nomeUsuario,
+                mensagem: inputMensagem.value.trim(),
+                data: new Date().toLocaleString('pt-BR')
+            };
 
-        // 2. Carregar feedbacks existentes
-        const feedbacksSalvosJSON = localStorage.getItem('pipaFeedbacks');
-        const feedbacks = feedbacksSalvosJSON ? JSON.parse(feedbacksSalvosJSON) : [];
-        
-        // 3. Adicionar o novo e salvar (Permite múltiplos envios)
-        feedbacks.unshift(novoFeedback); // Adiciona no início (mais recente primeiro)
-        localStorage.setItem('pipaFeedbacks', JSON.stringify(feedbacks));
+            const feedbacksSalvosJSON = localStorage.getItem('pipaFeedbacks');
+            const feedbacks = feedbacksSalvosJSON ? JSON.parse(feedbacksSalvosJSON) : [];
+            
+            feedbacks.unshift(novoFeedback); 
+            localStorage.setItem('pipaFeedbacks', JSON.stringify(feedbacks));
 
-        // 4. Limpar e fechar
-        alert('Obrigado! Seu feedback foi enviado.');
-        inputMensagem.value = '';
-        inputNome.value = '';
-        anonimoCheck.checked = false;
-        inputNome.disabled = false;
-        inputNome.placeholder = 'Nome';
+            alert('Obrigado! Seu feedback foi enviado.');
+            inputMensagem.value = '';
+            inputNome.value = '';
+            anonimoCheck.checked = false;
+            inputNome.disabled = false;
+            inputNome.placeholder = 'Nome';
 
-        fecharModal(modalFeedback);
-    });
+            fecharModal(modalFeedback);
+        });
+    }
 
     // --- Lógica de Visualização ---
     function carregarFeedbacks() {
-        // Limpa a lista antes de recarregar
+        if (!listaFeedbacksDiv) return;
+
         listaFeedbacksDiv.innerHTML = ''; 
 
         const feedbacksSalvosJSON = localStorage.getItem('pipaFeedbacks');
@@ -204,7 +208,6 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        // Gera o HTML para cada feedback
         feedbacks.forEach(feedback => {
             const feedbackItem = document.createElement('div');
             feedbackItem.classList.add('feedback-item');
