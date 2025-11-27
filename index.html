@@ -13,8 +13,8 @@
                 <h1>PIPA</h1>
                 <img src="imagens/ChatGPT Image 23 de out. de 2025, 11_06_57.png" id="imagem-pipa">
                 </div>
-                <h3><a href="#sobree">Sobre nós</a></h3>
-                <h3><a href="https://sites.google.com/d/1rKpOR58cUSjd6UVjq15pYEoAHtTuT4Zs/p/1Lj_D5IfEpIn0z-nCLildva7Tw-hsJSP-/edit">ONGs</a></h3>
+                <h3><a href="#" id="abrirSobreNos">Sobre nós</a></h3>
+                <h3><a href="https://sites.google.com/view/pipa-tecnico2025/in%C3%ADcio">ONGs</a></h3>
                 <h3><a href="#caroca">Instituições</a></h3>
                 <h3><a href="#" id="abrirFeedback">Feedbacks</a></h3>
                 
@@ -47,7 +47,7 @@
             </section>
             <section class="vivi">
                 <p>A terceira aluna do grupo desenvolveu esta plataforma focada exclusivamente em Organizações Não Governamentais (ONGs). Uma ONG é uma Organização Não Governamental, uma entidade privada e sem fins lucrativos que opera de forma independente para promover e defender causas sociais. Elas preenchem lacunas na sociedade, atuando em áreas como educação, meio ambiente ou saúde, e são essenciais para mobilizar a comunidade e gerar um impacto social positivo.</p>
-                <h4><a href="https://sites.google.com/d/1rKpOR58cUSjd6UVjq15pYEoAHtTuT4Zs/p/1Lj_D5IfEpIn0z-nCLildva7Tw-hsJSP-/edit" >Acesse aqui</a></h4>
+                <h4><a href="https://sites.google.com/view/pipa-tecnico2025/in%C3%ADcio" >Acesse aqui</a></h4>
             </section>
             <section class="cc" id="caroca"> <!--carrosel container-->
             <div class="cf"> <!--faixa do carrosel-->
@@ -154,7 +154,10 @@
                 <button id="abrirVisualizacao" class="botao-feedback">Visualizar Feedbacks</button>
                 <p id="nd">© 2025  PIPA</p>
             </div>
-            <div id="modalVisualizacao" class="modal">
+            
+            <script src="script.js"></script>
+        </footer>
+        <div id="modalVisualizacao" class="modal">
                 <div class="modal-content">
                     <span class="fechar-modal" data-modal-id="modalVisualizacao">&times;</span>
                     <h2>Feedbacks Recebidos</h2>
@@ -162,7 +165,36 @@
                 </div>
                 </div>
             </div>
-            <script src="script.js"></script>
-        </footer>
+
+        <div id="modalSobreNos" class="modal">
+    <div class="modal-content">
+        <span class="fechar-modal" data-modal-id="modalSobreNos">&times;</span>
+        <h2>Sobre a PIPA e a Equipe</h2>
+        
+        <p class="descricao-equipe">
+            Alunas do Senac Distrito Criativo produziram essa plataforma para a feira do técnico 2025 com o tema Cidades Conectadas.
+        </p>
+        
+        <div class="equipe-container">
+            
+            <div class="membro-item">
+                <img src="imagens/me.jpg" alt="Foto Joana Nonemacher" class="foto-circular">
+                <h3>Joana Nonemacher</h3>
+            </div>
+            
+            <div class="membro-item">
+                <img src="imagens/vivi.jpeg" alt="Foto Vivian Lucas" class="foto-circular">
+                <h3>Vivian Lucas</h3>
+            </div>
+            
+            <div class="membro-item">
+                <img src="imagens/leti.png" alt="Foto Leticia Hypolito" class="foto-circular">
+                <h3>Leticia Hypolito</h3>
+            </div>
+
+        </div>
+        
+    </div>
+</div>
     </body>
 </html>

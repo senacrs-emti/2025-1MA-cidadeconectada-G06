@@ -70,6 +70,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const modalFeedback = document.getElementById('modalFeedback');
     const modalVisualizacao = document.getElementById('modalVisualizacao');
+    const modalSobreNos = document.getElementById('modalSobreNos');
+    const abrirSobreNosBtn = document.getElementById('abrirSobreNos');
     const abrirFeedbackBtn = document.getElementById('abrirFeedback');
     const abrirVisualizacaoBtn = document.getElementById('abrirVisualizacao');
     
@@ -109,6 +111,12 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault(); 
             abrirModal(modalFeedback);
         });
+    }
+    if (abrirSobreNosBtn) {
+    abrirSobreNosBtn.addEventListener('click', (e) => {
+        e.preventDefault(); 
+        abrirModal(modalSobreNos);
+    });
     }
 
     if (abrirVisualizacaoBtn) {

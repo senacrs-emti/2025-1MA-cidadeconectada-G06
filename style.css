@@ -269,9 +269,7 @@ footer .fim #nd{
     pointer-events: none; 
 }
 
-/* container principal */
 .modal {
-    /* Fica fixo sobre tudo */
     position: fixed; 
     z-index: 100; 
     left: 0;
@@ -304,7 +302,7 @@ footer .fim #nd{
 }
 
 /* botao x) */
-.fechar-modal {
+.fechar-modal{
     color: #aaa;
     float: right;
     font-size: 28px;
@@ -315,13 +313,13 @@ footer .fim #nd{
     right: 15px;
 }
 
-.fechar-modal:hover, .fechar-modal:focus {
+.fechar-modal:hover, .fechar-modal:focus{
     color: #333;
     text-decoration: none;
 }
 
 
-.input-feedback {
+.input-feedback{
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -332,30 +330,30 @@ footer .fim #nd{
 }
 
 /* placeholder */
-.input-feedback::placeholder {
+.input-feedback::placeholder{
     color: #888; 
     opacity: 1; 
 }
 
-.input-group {
+.input-group{
     display: flex;
     gap: 10px;
     margin-bottom: 15px;
     align-items: center;
 }
 
-.input-group #inputNome {
+.input-group #inputNome{
     flex-grow: 1;
     margin-bottom: 0; 
 }
-.anonimo-opcoes {
+.anonimo-opcoes{
     display: flex;
     align-items: center;
     white-space: nowrap;
 }
 
 /* botao envio */
-#enviarFeedback {
+#enviarFeedback{
     background-color: #2B5738;
     color: white;
     padding: 10px 15px;
@@ -368,29 +366,69 @@ footer .fim #nd{
     gap: 5px;
 }
 
-#enviarFeedback:hover {
+#enviarFeedback:hover{
     background-color: #3f7b4e;
 }
 
 /* visualização dos feedbacks */
-#listaFeedbacks {
+#listaFeedbacks{
     max-height: 300px;
     overflow-y: auto;
     padding-top: 5px;
 }
 
-.feedback-item {
+.feedback-item{
     border-bottom: 1px solid #eee;
     padding: 10px 0;
 }
 
-.feedback-nome {
+.feedback-nome{
     font-weight: bold;
     color: #2B5738;
 }
 
-.feedback-data {
+.feedback-data{
     font-size: 0.8em;
     color: #999;
     margin-bottom: 5px;
+}
+
+.equipe-container{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap; 
+    gap: 30px; 
+    margin: 30px 0 20px 0;
+}
+
+.membro-item{
+    text-align: center;
+    width: 25%; 
+    min-width: 120px;
+}
+
+.foto-circular{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 3px solid #2B5738;
+}
+
+.membro-item h3{
+    margin-top: 5px;
+    margin-bottom: 0;
+    font-size: 1em;
+}
+
+.descricao-equipe{
+    margin: 10px 20px;
+    text-align: center;
+    font-size: 1em;
+    font-style: italic;
+    color: #555;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
 }
